@@ -1,18 +1,19 @@
 var req;
 function validateForm(form) {
-	var username = document.forms["myForm"]["username"].value;
-	if (username == null || username == "") {
-		alert("Please enter a username.");
+	var eventId = document.forms["myForm"]["eventId"].value;
+	if (eventId == null || eventId == "") {
+		alert("Please enter a eventId.");
 		return false;
 	}
+	
+	var senderId = document.forms["myForm"]["senderId"].value;
+	var receiverId = document.forms["myForm"]["receiverId"].value;
+	var message = document.forms["myForm"]["message"].value;
+	var sendurl = "http://localhost:80/Dynamic/InvitationCreate?eventId="
+		+ eventId + "&senderId=" + senderId + "&receiverId="
+		+ receiverId + "&message=" + message;
 
-	var password = document.forms["myForm"]["password"].value;
-	var facebookId = document.forms["myForm"]["facebookId"].value;
-	var linkedInId = document.forms["myForm"]["linkedInId"].value;
-	var gender = document.forms["myForm"]["gender"].value;
-	loadXMLDoc("http://localhost:80/ShareTrip/UserCreate?username="
-			+ username + "&facebookId=" + facebookId + "&linkedInId="
-			+ linkedInId + "&gender=" + gender + "&password=" + password);
+	loadXMLDoc(sendurl);
 
 }
 function loadXMLDoc(url) {
@@ -45,8 +46,6 @@ function processJSON() {
 			
 				// outputMsg += "<div id=fb-root></div>";
 				outputMsg += "<table class=output>";
-				outputMsg += "<th>UserID</th>";
-				outputMsg += "<td class=output>" + doc.userId + "</td>";
 				outputMsg += "</table>";
 				document.getElementById("updateArea").innerHTML = outputMsg;
 			

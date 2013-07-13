@@ -9,7 +9,7 @@ function validateForm(form) {
 	var startTime = document.forms["myForm"]["startTime"].value;
 	var endTime = document.forms["myForm"]["endTime"].value;
 
-	loadXMLDoc("http://10.16.23.17:8080/Dynamic/EventFilter?priceUp=" + priceUp
+	loadXMLDoc("http://localhost:80/ShareTrip/EventFilter?priceUp=" + priceUp
 			+ "&priceDown=" + priceDown + "&radius=" + radius + "&latitude="
 			+ latitude + "&longitude=" + longitude + "&number=" + number
 			+ "&startTime=" + startTime + "&endTime=" + endTime);

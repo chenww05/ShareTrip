@@ -20,7 +20,7 @@ function validateForm(form) {
 	var latitude = document.forms["myForm"]["latitude"].value;
 	var longitude = document.forms["myForm"]["longitude"].value;
 
-	loadXMLDoc("http://10.16.23.17:8080/Dynamic/EventCreate?name="
+	loadXMLDoc("http://localhost:80/ShareTrip/EventCreate?name="
 			+ name + "&description=" + description + "&price="
 			+ price + "&starttime=" + starttime + "&endtime=" + endtime 
 			+ "&number=" + number + "&type=" + type + "&location=" + location

@@ -11,7 +11,7 @@ function validateForm(form) {
 		return false;
 	}
 
-	var sendURL = "http://localhost:8080/Dynamic/EventUpdate?id=" + id;
+	var sendURL = "http://localhost:80/Dynamic/EventUpdate?id=" + id;
 	var price = document.forms["myForm"]["price"].value;
 	if (price != null && price != "" && !isNaN(price))
 		sendURL = sendURL + "&price=" + price;

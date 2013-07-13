@@ -1,18 +1,16 @@
 var req;
 function validateForm(form) {
-	var username = document.forms["myForm"]["username"].value;
-	if (username == null || username == "") {
-		alert("Please enter a username.");
+	var id = document.forms["myForm"]["eventId"].value;
+	if (id == null || id == "") {
+		alert("Please enter a id.");
+		return false;
+	}
+	if (isNaN(id)) {
+		alert("Please enter a valid id.");
 		return false;
 	}
 
-	var password = document.forms["myForm"]["password"].value;
-	var facebookId = document.forms["myForm"]["facebookId"].value;
-	var linkedInId = document.forms["myForm"]["linkedInId"].value;
-	var gender = document.forms["myForm"]["gender"].value;
-	loadXMLDoc("http://localhost:80/ShareTrip/UserCreate?username="
-			+ username + "&facebookId=" + facebookId + "&linkedInId="
-			+ linkedInId + "&gender=" + gender + "&password=" + password);
+	loadXMLDoc("http://localhost:80/Dynamic/GetSignUp?id=" + id);
 
 }
 function loadXMLDoc(url) {
@@ -45,8 +43,12 @@ function processJSON() {
 			
 				// outputMsg += "<div id=fb-root></div>";
 				outputMsg += "<table class=output>";
-				outputMsg += "<th>UserID</th>";
-				outputMsg += "<td class=output>" + doc.userId + "</td>";
+				outputMsg += "<th>Event Id</th>";
+				outputMsg += "<td class=output>" + doc.eventid + "</td>";
+				var array = String(doc.userids).split(/,/);
+				for(var i = 0; i < array.length; i++){
+					outputMsg += "<td class=output>" + array[i] + "</td>";
+				}
 				outputMsg += "</table>";
 				document.getElementById("updateArea").innerHTML = outputMsg;
 			
