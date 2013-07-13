@@ -5,7 +5,7 @@ function validateForm(form) {
 		alert("Please enter a userId.");
 		return false;
 	}
-	loadXMLDoc("http://10.16.23.17:8080/Dynamic/UserFetch?userId=" + userId);
+	loadXMLDoc("http://localhost:8080/Dynamic/UserFetch?userId=" + userId);
 
 }
 function loadXMLDoc(url) {
