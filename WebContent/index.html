@@ -1,0 +1,106 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+	<script src='https://cdn.firebase.com/v0/firebase.js'></script>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
+	<script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2OydZynp2KMPL3u3_9fBsDxGXZIyHA8w&amp;sensor=true"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<script type="text/javascript" src="//sslstatic.wix.com/services/js-sdk/1.17.0/js/Wix.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/google-maps.js"></script>
+	<title></title>
+</head>
+<body>
+	<!-- Home -->
+	<div data-role="page" id="page1" class= "back">
+		<div data-role="header" class="header_bar">
+			<h1>
+				<div class="logo_title">PlaceTalk</div>
+			</h1>
+		</div>
+		    <a href="#" onclick="doSomething();">Click Me!</a>
+		
+		<div data-role="content" class="content_area">
+			<img src="img/Logo.png" class="homeLogo">
+			<img src="img/Logo.png" class="filler" style="opacity: 0">
+			<!-- <img src="img/safeWalk_no_icon.png" class="logo">
+			-->
+			<!-- <img src="img/safeWalk_no_icon.png" class="filler" style="opacity: 0">
+			-->
+			<div class="but_area">
+				<div data-role="fieldcontain" class = "input_field loginField">
+					<input id="userInput" type="text" value="" tabIndex="7" data-theme="d" placeholder="Username"/>
+				</div>
+				<div data-role="fieldcontain" class = "input_field passField" >
+					<input id="passInput" type="text" value="" tabIndex="7" data-theme="d" placeholder="Password"/>
+				</div>
+
+				<div class="homeSubmit">
+					<a href="#page2" onclick="javascript:submit()"data-role="button" class="submit" data-corners="true" data-mini="true" data-theme="d" tabIndex="9">Login Now!</a>
+				</div>
+			</div>
+			<div data-role="popup" id="popupOptions" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+				<div class="options"></div>
+				<div class="options"></div>
+				<div class="options"></div>
+			</div>
+
+		</div>
+		<div data-role="footer" data-id="fixedFooter" data-position="fixed" data-tap-toggle="false">
+			<h3>
+				<!-- <a href="#popupBasic" data-rel="popup" data-transition="pop" data-position-to="window" data-overlay-theme="a">
+				-->
+				<!-- <img src="img/NewMessage.png" class="ui-btn-right send_message"></a>
+			-->
+		</h3>
+
+	</div>
+
+</div>
+
+<!-- Main Page -->
+<div data-role="page" id="page2">
+
+	<div data-role="header" class="header_bar">
+		<h1>
+			<a href="#page1">
+				<img src="img/Logo.png" class="ui-btn-left">
+			</a>
+			<div class="logo_title">PlaceTalk</div>
+			<img src="img/ViewMessages.png" class="ui-btn-right">
+		</h1>
+
+	</div>
+
+	<div data-role="content" class="content_area">
+		<div id="map-canvas" style="width: 100%; height: 90%; position: absolute;"></div>
+		<div data-role="popup" id="popupBasic" data-overlay-theme="a" >
+
+			<div data-role="content" class="message">
+				<textarea class="message_box">Hello</textarea>
+				<a data-theme="a" data-role="button" id="bGun" href="#page1" onclick="javascript: doSomething()" class="post">Post</a>
+			</div>
+
+		</div>
+
+		<div data-role="footer" data-id="fixedFooter" data-position="fixed" data-tap-toggle="false">
+			<h3>
+				<a href="#" onclick="javascript:refresh()"> <img src="img/refresh.png" class="ui-btn-left refresh_Button"></a>
+				<a href="#popupBasic" data-rel="popup" data-transition="pop" data-position-to="window" data-overlay-theme="a">
+					<img src="img/NewMessage.png" class="ui-btn-right send_message"></a>
+			</h3>
+
+		</div>
+	</div>
+</div>
+<script>
+function doSomething() {
+	console.log("yay!");
+	$.get("somepage.php");
+	return false;
+}</script>
+
+</body>
+</html>

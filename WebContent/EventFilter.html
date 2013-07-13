@@ -1,0 +1,98 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<HTML>
+
+<HEAD>
+
+<TITLE>Event Filter</TITLE>
+<style type="text/css">
+table {
+	border: 2px solid;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+td,tr {
+	border: 1 solid;
+	vertical-align: middle
+}
+
+th {
+	border: 1px solid
+}
+
+.output {
+	border: 1px solid;
+	vertical-align: middle;
+}
+</style>
+<SCRIPT LANGUAGE="JavaScript" src="EventFilter.js" type="text/javascript">
+	
+</SCRIPT>
+
+
+</HEAD>
+<BODY style="font-family: arial">
+
+	<div id="fb-root"></div>
+
+	<h1>
+		<center>
+			<b>Event Filter</b>
+		</center>
+	</h1>
+
+	<FORM name="myForm" action="" method="get">
+		<table align=center cellpadding=10 width=350>
+			<tr>
+				<td>PriceUp:</td>
+				<td><INPUT TYPE="text" Name="priceUp" VALUE="500"
+					style="width: 200px" /></td>
+			</tr>
+			<tr>
+				<td>PriceDown:</td>
+				<td><INPUT TYPE="text" Name="priceDown" VALUE="50"
+					style="width: 200px" /></td>
+			</tr>
+			<tr>
+				<td>Radius:</td>
+				<td><INPUT TYPE="text" Name="radius" VALUE="400"
+					style="width: 200px" /></td>
+			</tr>
+			<tr>
+				<td>Latitude:</td>
+				<td><INPUT TYPE="text" Name="latitude" VALUE="100"
+					style="width: 200px" /></td>
+			</tr>
+			<tr>
+				<td>Longitude:</td>
+				<td><INPUT TYPE="text" Name="longitude" VALUE="10"
+					style="width: 200px" /></td>
+			</tr>
+			<tr>
+				<td>Number:</td>
+				<td><INPUT TYPE="text" Name="number" VALUE="4"
+					style="width: 200px" /></td>
+			</tr>
+			<tr>
+				<td>Start Time:</td>
+				<td><INPUT TYPE="text" Name="startTime"
+					VALUE="2007-10-10 12:12:12" style="width: 200px" /></td>
+			</tr>
+			<tr>
+				<td>End Time:</td>
+				<td><INPUT TYPE="text" Name="endTime"
+					VALUE="2207-11-11 12:12:12" style="width: 200px" /></td>
+			</tr>
+			<tr>
+				<td colspan=2><center>
+						<input type="button" value="Filter"
+							onClick="validateForm(this.form)">
+					</center></td>
+			</tr>
+		</table>
+	</FORM>
+	<div id="updateArea"></div>
+	<noscript>
+</BODY>
+</HTML>
