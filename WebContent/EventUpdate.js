@@ -30,7 +30,6 @@ function validateForm(form) {
 	var longitude = document.forms["myForm"]["longitude"].value;
 	if (longitude != null && longitude != "" && !isNaN(longitude))
 		sendURL = sendURL + "&longitude=" + longitude;
-	alert(sendURL);
 	loadXMLDoc(sendURL);
 }
 function loadXMLDoc(url) {

@@ -36,15 +36,12 @@ function processJSON() {
 		if (req.status == 200) {
 			var doc = JSON.parse(req.responseText);
 			var outputMsg = "";
-			if (doc.hotels.hotel.length == 0) {
-				document.getElementById("updateArea").innerHTML = "No Results Found";
-			} else {
+
 				// outputMsg += "<div id=fb-root></div>";
 				outputMsg += "<table class=output>";
-				outputMsg += "<th>Image</th><th>Name</th><th>Location</th><th>Rating out of 5</th><th>Reviews</th><th>Post to Facebook</th>";
+				outputMsg += "<th></th>";
 				outputMsg += "</table>";
 				document.getElementById("updateArea").innerHTML = outputMsg;
-			}
 		} else {
 			document.getElementById("updateArea").innerHTML = "Failed";
 		}
