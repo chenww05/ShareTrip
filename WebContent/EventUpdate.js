@@ -11,7 +11,11 @@ function validateForm(form) {
 		return false;
 	}
 
+<<<<<<< HEAD
 	var sendURL = "http://localhost:80/Dynamic/EventUpdate?id=" + id;
+=======
+	var sendURL = "http://localhost:8080/Dynamic/EventUpdate?id=" + id;
+>>>>>>> 888696e8134e09dbd150ae9ec0414e3e5add7a38
 	var price = document.forms["myForm"]["price"].value;
 	if (price != null && price != "" && !isNaN(price))
 		sendURL = sendURL + "&price=" + price;
@@ -60,7 +64,7 @@ function processJSON() {
 		if (req.status == 200) {
 			document.getElementById("updateArea").innerHTML = "Done";
 		} else {
-			document.getElementById("updateArea").innerHTML = "Failed";
+			document.getElementById("updateArea").innerHTML = "Sorry";
 		}
 	}
 
